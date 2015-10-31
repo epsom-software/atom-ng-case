@@ -1,40 +1,22 @@
 ChangeCase = require 'change-case'
 
-Commands =
-  camel: 'camelCase'
-  constant: 'constantCase'
-  dot: 'dotCase'
-  lower: 'lowerCase'
-  lowerFirst: 'lowerCaseFirst'
-  param: 'paramCase'
-  pascal: 'pascalCase'
-  path: 'pathCase'
-  sentence: 'sentenceCase'
-  snake: 'snakeCase'
-  switch: 'switchCase'
-  title: 'titleCase'
-  upper: 'upperCase'
-  upperFirst: 'upperCaseFirst'
-
 module.exports =
   activate: (state) ->
-    for command of Commands
-      makeCommand(command)
+    atom.commands.add 'atom-workspace', "ng-case", ->
+      editor = atom.workspace.getActiveTextEditor()
+      return unless editor?
 
-makeCommand = (command) ->
-  atom.commands.add 'atom-workspace', "change-case:#{command}", ->
-    editor = atom.workspace.getActiveTextEditor()
-    return unless editor?
+      options = {}
+      options.wordRegex = /^[\t ]*$|[^\s\/\\\(\)"':,\.;<>~!@#\$%\^&\*\|\+=\[\]\{\}`\?]+/g
+      for cursor in editor.getCursors()
+        position = cursor.getBufferPosition()
 
-    method = Commands[command]
-    converter = ChangeCase[method]
+        range = cursor.getCurrentWordBufferRange(options)
+        text = editor.getTextInBufferRange(range)
 
-    options = {}
-    options.wordRegex = /^[\t ]*$|[^\s\/\\\(\)"':,\.;<>~!@#\$%\^&\*\|\+=\[\]\{\}`\?]+/g
-    for cursor in editor.getCursors()
-      position = cursor.getBufferPosition()
+        command = if text.indexOf('-') === -1 then 'paramCase' else 'camelCase'
+        method = Commands[command]
+        converter = ChangeCase[method]
 
-      range = cursor.getCurrentWordBufferRange(options)
-      text = editor.getTextInBufferRange(range)
-      newText = converter(text)
-      editor.setTextInBufferRange(range, newText)
+        newText = converter(text)
+        editor.setTextInBufferRange(range, newText)

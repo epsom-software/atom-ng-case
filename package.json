@@ -1,12 +1,13 @@
 {
-  "name": "change-case",
-  "main": "./lib/change-case",
-  "version": "0.6.0",
-  "description": "Change the case of selected text using node-change-case",
-  "repository": "https://github.com/robhurring/atom-change-case.git",
+  "name": "atom-ng-case",
+  "main": "./lib/atom-ng-case",
+  "version": "0.1.0",
+  "description": "Switch between <my-custom-directive> and myCustomDirective to speed up working with AngularJS directives.",
+  "repository": "https://github.com/epsom-software/atom-ng-case.git",
   "license": "MIT",
-  "author": "Rob Hurring",
+  "author": "Michael Singleton",
   "contributors": [
+    "Rob Hurring",
     "Philip Blyth",
     "Sergey Fedorov",
     "Timo Sand <timo.j.sand@gmail.com>"
