@@ -3,19 +3,77 @@
   "main": "./lib/atom-ng-case",
   "version": "1.1.0",
   "description": "Switch between <my-custom-directive> and myCustomDirective to speed up working with AngularJS directives.",
-  "repository": "https://github.com/epsom-software/atom-ng-case.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epsom-software/atom-ng-case.git"
+  },
   "license": "MIT",
-  "author": "Michael Singleton",
+  "author": {
+    "name": "Michael Singleton"
+  },
   "contributors": [
-    "Rob Hurring",
-    "Philip Blyth",
-    "Sergey Fedorov",
-    "Timo Sand <timo.j.sand@gmail.com>"
+    {
+      "name": "Rob Hurring"
+    },
+    {
+      "name": "Philip Blyth"
+    },
+    {
+      "name": "Sergey Fedorov"
+    },
+    {
+      "name": "Timo Sand",
+      "email": "timo.j.sand@gmail.com"
+    }
   ],
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
     "change-case": "~1.0.6"
+  },
+  "readme": "# Change Case Plugin\nA wrapper around [node-change-case](https://github.com/blakeembrey/node-change-case) for atom.\n\nSwitch between <my-custom-directive> and myCustomDirective to speed up working with AngularJS directives.\n\n## Commands\n\n* ng-case\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/epsom-software/atom-ng-case/issues"
+  },
+  "homepage": "https://github.com/epsom-software/atom-ng-case#readme",
+  "_id": "atom-ng-case@1.1.0",
+  "_shasum": "740e66f61c0b12dda45a7a432f3912e26be74727",
+  "_resolved": "file:..\\d-115931-17628-1v1avww\\package.tgz",
+  "_from": "..\\d-115931-17628-1v1avww\\package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "change-case",
+        "version": "1.0.6",
+        "path": "node_modules\\change-case\\change-case.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib\\change-case.coffee"
+      ],
+      ".js": [
+        "node_modules\\change-case\\change-case.js",
+        "node_modules\\change-case\\test.js"
+      ],
+      ".json": [
+        "node_modules\\change-case\\package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "change-case": "~1.0.6"
+        }
+      }
+    ]
   }
 }

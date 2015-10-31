@@ -8,4 +8,4 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-workspace':
-  'cmd-a cmd-a': 'ng-case'
+  'ctrl-k ctrl-c': 'ng-case'
