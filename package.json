@@ -1,7 +1,7 @@
 {
   "name": "ng-case",
   "main": "./lib/atom-ng-case",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Switch between <my-custom-directive> and myCustomDirective to speed up working with AngularJS directives.",
   "repository": {
     "type": "git",
